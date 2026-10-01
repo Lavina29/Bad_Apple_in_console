@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <stdio.h>
-#include <mmsystem.h>   // для звука (необязательно)
+#include <mmsystem.h>
 
 #pragma comment(lib, "winmm.lib")
 
@@ -23,8 +23,6 @@ int main() {
         return 1;
     }
 
-    // необязательно: звук, если есть badapple.wav
-    // (из видео: ffmpeg -i badapple.mp4 badapple.wav)
     PlaySound("badapple.wav", NULL, SND_FILENAME | SND_ASYNC);
 
     unsigned char frame[W * H];
@@ -47,7 +45,6 @@ int main() {
         SetConsoleCursorPosition(h, home);
         fputs(out, stdout);
 
-        // ждём, пока наступит время следующего кадра
         n++;
         ULONGLONG target = start + (ULONGLONG)n * 1000 / FPS;
         while (GetTickCount64() < target) Sleep(1);
