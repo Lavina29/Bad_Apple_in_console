@@ -70,4 +70,4 @@ If you change `W`, `H` or `FPS`, regenerate `frames.raw` with matching `fps=` an
 
 ## Author
 
-Anastasia Shestopal
+Lavina_29
